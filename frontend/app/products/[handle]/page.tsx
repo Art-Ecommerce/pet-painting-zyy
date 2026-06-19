@@ -128,7 +128,7 @@ export default async function ProductPage({
     ...new Set(
       product.variants.nodes
         .flatMap((v) => v.selectedOptions)
-        .filter((opt) => opt.name === "Size")
+        .filter((opt) => opt.name.toLowerCase() === "size")
         .map((opt) => opt.value)
     ),
   ];
@@ -136,7 +136,7 @@ export default async function ProductPage({
     ...new Set(
       product.variants.nodes
         .flatMap((v) => v.selectedOptions)
-        .filter((opt) => opt.name === "Frame")
+        .filter((opt) => opt.name.toLowerCase() === "frame")
         .map((opt) => opt.value)
     ),
   ];
